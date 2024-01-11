@@ -15,8 +15,8 @@ class ValidPalindrome {
 
         if (s.length() == 1)
             return true; // by default 1-length strings should be palindromes
-
-        char[] chars = s.toCharArray();
+        // \\p{Punct}
+        char[] chars = s.toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("\\s", "").toCharArray();
 
         int leftPointer = 0;
         int rightPointer = chars.length - 1;

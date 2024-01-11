@@ -25,6 +25,22 @@ class ValidPalindromeTest {
     }
 
     @Test
+    void checkRegexExpression() {
+        String input = "A man, a plan, a canal: Panama";
+
+        String output = input.replaceAll("\\p{Punct}", "").replaceAll("\\s", "");
+
+        System.out.println(output);
+    }
+
+    @Test
+    void validPalindromeComplicated() {
+        String s = "A man, a plan, a canal: Panama";
+
+        assertTrue(validPalindrome.isPalindrome(s));
+    }
+
+    @Test
     void notAPalindrome() {
         String s = "abracadabra";
 
