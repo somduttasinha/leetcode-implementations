@@ -18,14 +18,14 @@ class ValidPalindrome {
 
         char[] chars = s.toCharArray();
 
-        int leftPointer = chars[0];
-        int rightPointer = chars[s.length() - 1];
+        int leftPointer = 0;
+        int rightPointer = chars.length - 1;
 
         while (leftPointer < rightPointer) {
             if (chars[leftPointer] != chars[rightPointer])
                 return false;
             leftPointer++;
-            rightPointer++;
+            rightPointer--;
         }
 
         return true;
